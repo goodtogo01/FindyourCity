@@ -1,0 +1,26 @@
+=> SUCCESS LOGIN
+
+1. Validate Login page tile as “Login | YourCity”
+2. Enter UserName as “admin”
+3. Enget Password as “adm123”
+4. Login button
+5. Validate homePage Title as : “YourCity - City Finder”
+
+=> SUCCESS LOGOUT
+
+1. Validate Login page tile as “Login | YourCity”
+2. Enter UserName
+3. Enget Password
+4. Login button
+5. Validate homePage Title as : “YourCity - City Finder”
+6. Click on logout button
+7. Validate Login page tile as “Login | YourCity”
+
+=> ERROR MESSAGE WHILE FAILED LOGIN:
+ 
+
+1. Validate Login page tile as “Login | YourCity”
+2. Enter UserName (INVALID)
+3. Enget Password (INVALID)
+4. Login button
+5. capture Error Message as: “Invalid username or password!”

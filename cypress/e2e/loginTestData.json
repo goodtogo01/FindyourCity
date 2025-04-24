@@ -1,0 +1,15 @@
+{
+    "validUser": {
+      "username": "admin",
+      "password": "adm123"
+    },
+    "invalidUser": {
+      "username": "wronguser",
+      "password": "wrongpass"
+    },
+    "titles": {
+      "login": "Login | YourCity",
+      "home": "YourCity - City Finder"
+    },
+    "errorMessage": "Invalid username or password!"
+  }

@@ -1,0 +1,22 @@
+{
+    "dropdownData": [
+      {
+        "country": "United States",
+        "state": "California",
+        "city": "Los Angeles",
+        "cityDescription": "Los Angeles"
+      },
+      {
+        "country": "Canada",
+        "state": "Ontario",
+        "city": "Toronto",
+        "cityDescription": "Toronto"
+      },
+      {
+        "country": "Australia",
+        "state": "New South Wales",
+        "city": "Sydney",
+        "cityDescription": "Sydney"
+      }
+    ]
+  }

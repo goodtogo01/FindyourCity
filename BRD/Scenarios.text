@@ -1,0 +1,166 @@
+To automate your website, I’ll break it down into several scenarios, and based on those scenarios, I will provide test cases and steps, separating them into Unit, Integration, and Regression test suites.
+
+1. Possible Scenarios:
+	1.	Login Scenarios:
+	•	Successful login with valid credentials.
+	•	Invalid login with incorrect username/password.
+	•	Empty login fields (username/password empty).
+	•	Login with valid credentials but unsuccessful due to session expiration.
+	•	Login with a valid user but unsuccessful due to network issues.
+	2.	Country, State, and City Selection:
+        •	Select a country and state, and then select a city.
+        •	Select a country but leave the state or city unselected.
+        •	Select a state but leave the country or city unselected.
+        •	Select a city but leave the country or state unselected.
+	3.	UI Element Interactions:
+        •	Check visibility of country/state/city dropdowns.
+        •	Check the visibility of labels for country/state/city (hide labels on selection).
+        •	Ensure the “New Search” button works as expected after selection.
+	4.	Logout Scenarios:
+	•	Successfully logout and check redirection to the login page.
+	•	Logout and try accessing the main page without logging in again (should redirect to the login page).
+	5.	City Details Display:
+	•	Verify the city details are displayed once a city is selected.
+	•	Ensure the data is correct and corresponding to the selected city.
+
+⸻
+
+2. Test Cases and Steps:
+
+Login Scenarios:
+	1.	Successful Login with Valid Credentials
+	•	Test Case: Verify that users can login with valid credentials.
+	•	Steps:
+	1.	Open the login page.
+	2.	Enter a valid username.
+	3.	Enter the valid password.
+	4.	Click the login button.
+	5.	Assert that the user is redirected to the homepage (index.html).
+	6.	Verify that the “Logout” button is visible.
+	2.	Invalid Login with Incorrect Credentials
+	•	Test Case: Verify that login fails with incorrect credentials.
+	•	Steps:
+	1.	Open the login page.
+	2.	Enter an invalid username.
+	3.	Enter an incorrect password.
+	4.	Click the login button.
+	5.	Assert that an error message is shown (e.g., “Invalid credentials”).
+	6.	Ensure the user remains on the login page.
+	3.	Empty Login Fields
+	•	Test Case: Verify that the user cannot login with empty username or password.
+	•	Steps:
+	1.	Open the login page.
+	2.	Leave the username and password fields empty.
+	3.	Click the login button.
+	4.	Assert that the appropriate error message is shown (e.g., “Fields cannot be empty”).
+	4.	Login with Valid Credentials but Session Expired
+	•	Test Case: Verify that the user is redirected to the login page if the session has expired.
+	•	Steps:
+	1.	Open the login page.
+	2.	Login with valid credentials.
+	3.	Wait until the session expires (simulate session expiration).
+	4.	Attempt to access index.html.
+	5.	Assert that the user is redirected to the login page.
+
+⸻
+
+Country, State, and City Selection:
+	1.	Select Country, State, and City
+	•	Test Case: Verify that the user can select a country, state, and city correctly.
+	•	Steps:
+	1.	Open the homepage.
+	2.	Select a valid country from the country dropdown.
+	3.	Select a state from the state dropdown.
+	4.	Select a city from the city dropdown.
+	5.	Assert that the city information is displayed.
+	2.	Select Country but No State or City
+	•	Test Case: Verify that no city details are displayed when only the country is selected.
+	•	Steps:
+	1.	Open the homepage.
+	2.	Select a valid country from the dropdown.
+	3.	Leave the state and city fields empty.
+	4.	Assert that no city information is displayed.
+
+⸻
+
+UI Element Interactions:
+	1.	Visibility of Country, State, and City Dropdowns
+        Test Case: Verify that the dropdowns for country, state, and city are visible after selecting previous options.
+        Steps:
+            1.	Open the homepage.
+            2.	Select a country.
+            3.	Assert that the state dropdown is visible.
+            4.	Select a state.
+            5.	Assert that the city dropdown is visible.
+	2.	Hide Labels for Dropdowns after Selection
+        Test Case: Verify that the labels for country, state, and city are hidden once the user selects an option.
+        Steps:
+            1.	Open the homepage.
+            2.	Select a country.
+            3.	Assert that the country label is hidden.
+            4.	Select a state.
+            5.	Assert that the state label is hidden.
+            6.	Select a city.
+            7.	Assert that the city label is hidden.
+
+⸻
+
+Logout Scenarios:
+	1.	Successful Logout
+	•	Test Case: Verify that the user can successfully log out.
+	•	Steps:
+	1.	Open the homepage after login.
+	2.	Click the logout button.
+	3.	Assert that the user is redirected to the login page.
+	4.	Verify that the “Login” page elements are visible.
+	2.	Access Main Page after Logout
+	•	Test Case: Verify that the main page is inaccessible after logout without login.
+	•	Steps:
+	1.	Log out from the homepage.
+	2.	Attempt to access the main page directly.
+	3.	Assert that the user is redirected to the login page.
+
+⸻
+
+City Details Display:
+	1.	City Details Display After Selection
+	•	Test Case: Verify that the city details are displayed after selecting a city.
+	•	Steps:
+	1.	Open the homepage.
+	2.	Select a country, state, and city.
+	3.	Assert that the city information section is populated with correct data.
+
+⸻
+
+3. Test Suite Separation:
+
+Unit Test Suite:
+	•	Test individual components or methods in isolation (e.g., helper methods, UI components).
+	•	Example:
+	•	Test login form validation (e.g., valid username and password fields).
+
+Integration Test Suite:
+	•	Test the interactions between multiple components (e.g., login form, city dropdown, session handling).
+	•	Example:
+	•	Test successful login and subsequent access to the city selection feature.
+
+Regression Test Suite:
+	•	Ensure that existing features work after new changes.
+	•	Example:
+	•	Re-run the entire test suite after any changes to ensure no functionality is broken.
+
+⸻
+
+Automation Implementation Steps:
+	1.	Setting up Maven & Dependencies:
+	•	Add TestNG, Selenium, ExtentReports, and any other necessary dependencies in pom.xml.
+	2.	Create Base Test Class:
+	•	Include setup, teardown, and reporting methods using ExtentReports.
+	3.	Create Test Cases in TestNG:
+	•	Define test methods for each of the scenarios outlined above.
+	4.	Use Assertions and Reports:
+	•	Use assertions to validate test outcomes and generate ExtentReports for detailed logs.
+
+⸻
+
+I can help you with the code for these test cases, the test suite structure, and the setup if needed. Let me know if you’d like to proceed with the implementation!
