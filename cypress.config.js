@@ -2,7 +2,7 @@ const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
   e2e: {
-   baseUrl: 'http://localhost:8080',
+   baseUrl: 'http://localhost:5500/yourcity/',
     setupNodeEvents(on, config) {
     require("cypress-mochawesome-reporter/plugin")(on);
     },
