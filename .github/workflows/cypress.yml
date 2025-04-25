@@ -1,26 +1,12 @@
-name: Run Cypress Tests
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
+name: End-to-end tests
+on: push
 jobs:
-  cypress-tests:
-    runs-on: ubuntu-latest
-
+  cypress-run:
+    runs-on: ubuntu-24.04
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Start app and run Cypress tests
-        run: npm run test:e2e
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
