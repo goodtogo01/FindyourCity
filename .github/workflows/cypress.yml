@@ -1,12 +1,22 @@
 name: End-to-end tests
-on: push
+
+on: [push, pull_request]
+
 jobs:
   cypress-run:
     runs-on: ubuntu-24.04
+
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress tests
         uses: cypress-io/github-action@v6
+        with:
+          start: npm run start
+          wait-on: 'http://localhost:5500'
+          wait-on-timeout: 60 # seconds
+          browser: chrome # optional; you can remove or change it
