@@ -8,9 +8,9 @@
     "test_headed": "cypress run --headed",
     "test_chrome": "cypress run --browser chrome",
     "test_html": "cypress run --reporter cypress-mochawesome-reporter",
-  "start": "npm run test", 
-  "cypress:run": "cypress run",
-  "test:e2e": "start-server-and-test start http://localhost:5500 cypress:run"
+    "start": "live-server",
+    "cypress:run": "cypress run",
+    "test:e2e": "start-server-and-test start http://127.0.0.1:5500/yourcity/ cypress:run"
   },
   "keywords": [],
   "author": "",
