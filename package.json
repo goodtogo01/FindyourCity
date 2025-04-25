@@ -10,7 +10,7 @@
     "test_html": "cypress run --reporter cypress-mochawesome-reporter",
     "start": "npx live-server",
     "cypress:run": "cypress run",
-    "test:e2e": "start-server-and-test start http://127.0.0.1:5500/yourcity/ cypress:run"
+    "test:e2e": "start-server-and-test start http://127.0.0.1:8080/yourcity/ cypress:run"
   },
   "keywords": [],
   "author": "",
